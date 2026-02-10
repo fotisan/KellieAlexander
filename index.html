@@ -19,7 +19,6 @@
     <div class="hero__wrap">
       <div class="topbar">
         <div class="brand">
-          <div class="brand__avatar">KA</div>
           <div class="brand__text">
             <div class="brand__name">Kellie Alexander</div>
             <div class="brand__meta">LCSW, MSW • Westwood, NJ</div>
@@ -440,41 +439,40 @@
 
   <footer class="site-footer">
     <div class="site-footer__wrap">
-      <div class="site-footer__brand">
-        <div class="site-footer__name">Kellie Alexander</div>
-        <div class="site-footer__meta">
-          Clinical Social Work/Therapist, LCSW, MSW<br>
-          Westwood, New Jersey 07675
+      
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <div class="site-footer__name">Kellie Alexander</div>
+          <div class="site-footer__meta">Clinical Social Work/Therapist • Westwood, NJ</div>
         </div>
       </div>
 
+      <div class="site-footer__line"></div>
+
       <div class="site-footer__cols">
         <div class="site-footer__col">
-          <div class="site-footer__k">Navigation</div>
+          <div class="site-footer__k">Explore</div>
           <a class="site-footer__link" href="#specialties">Specialties</a>
-          <a class="site-footer__link" href="#about">About</a>
-          <a class="site-footer__link" href="#finances">Finances</a>
+          <a class="site-footer__link" href="#focus">Issues</a>
+          <a class="site-footer__link" href="#about">About Me</a>
         </div>
 
         <div class="site-footer__col">
           <div class="site-footer__k">Contact</div>
-          <div class="site-footer__text">
-            <a class="site-footer__link" href="tel:2012126209">(201) 212-6209</a><br />
-            Westwood, NJ
-          </div>
+          <a class="site-footer__link" href="tel:2012126209">(201) 212-6209</a>
+          <a class="site-footer__link" href="#contact">Email Me</a>
         </div>
 
         <div class="site-footer__col">
-           <div class="site-footer__k">Emergency</div>
-           <div class="site-footer__text">
-             If this is an emergency, please call 911 or visit your nearest emergency room.
-           </div>
+           <div class="site-footer__k">Information</div>
+           <a class="site-footer__link" href="#finances">Fees & Insurance</a>
+           <span class="site-footer__text">Emergency: Call 911</span>
         </div>
       </div>
 
       <div class="site-footer__bottom">
-        <div class="site-footer__copy">© <span id="y"></span> Kellie Alexander.</div>
-        <div class="site-footer__credit">Psychology Today Profile</div>
+        <div class="site-footer__copy">© <span id="y"></span> Kellie Alexander. All rights reserved.</div>
+        <div class="site-footer__credit">Based on Psychology Today Profile</div>
       </div>
     </div>
   </footer>
@@ -532,7 +530,7 @@
           });
         }
 
-        // Services Horizontal Scroll
+        // Services Horizontal Scroll (Mobile only)
         const scroller = document.querySelector(".services__pyramid");
         const btnPrev = document.querySelector(".svc-nav__prev");
         const btnNext = document.querySelector(".svc-nav__next");
