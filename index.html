@@ -70,9 +70,13 @@
 
         <div class="hero__media">
           <div class="media__frame">
-            <div class="placeholder-box hero-img-placeholder">
-                <span>Therapy Space Image</span>
-            </div>
+            <img 
+              src="kellie-alexander-hero-portrait.webp" 
+              alt="Kellie Alexander, LCSW Clinical Social Worker" 
+              width="600" height="800" 
+              loading="eager" 
+              class="hero__img"
+            />
           </div>
 
           <div class="info-card">
@@ -257,9 +261,13 @@
 
           <div class="about__media">
             <figure class="portrait">
-              <div class="placeholder-box portrait-placeholder">
-                  <span>Kellie Alexander<br>LCSW</span>
-              </div>
+              <img 
+                src="kellie-alexander-casual.webp" 
+                alt="Kellie Alexander smiling" 
+                width="600" height="700" 
+                loading="lazy" 
+                class="portrait__img"
+              />
             </figure>
           </div>
         </div>
@@ -348,9 +356,13 @@
           </div>
           
           <aside class="faq__media">
-             <div class="placeholder-box office-placeholder">
-                <span>Office Space</span>
-             </div>
+             <img 
+                src="therapy-office-space.webp" 
+                alt="Welcoming therapy office space" 
+                width="600" height="400"
+                loading="lazy"
+                class="media__img"
+             />
           </aside>
         </div>
       </div>
@@ -368,9 +380,13 @@
             
             <div class="contact-card__left">
               <div class="contact-card__media">
-                 <div class="placeholder-box map-placeholder">
-                    <span>Westwood, NJ</span>
-                 </div>
+                 <img 
+                    src="westwood-location-exterior.webp" 
+                    alt="Building exterior in Westwood, NJ" 
+                    width="600" height="400"
+                    loading="lazy"
+                    class="contact-card__img"
+                 />
               </div>
               
               <div class="contact-card__info">
@@ -530,7 +546,7 @@
           });
         }
 
-        // Services Horizontal Scroll (Mobile only)
+        // Services Horizontal Scroll (Mobile)
         const scroller = document.querySelector(".services__pyramid");
         const btnPrev = document.querySelector(".svc-nav__prev");
         const btnNext = document.querySelector(".svc-nav__next");
