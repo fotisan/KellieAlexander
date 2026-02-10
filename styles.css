@@ -67,6 +67,7 @@ a {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -80,26 +81,6 @@ img {
   margin: 0 auto;
 }
 
-/* --- PLACEHOLDER BOX STYLES --- */
-.placeholder-box {
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
-  background: #e6e1d8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  font-weight: 600;
-  text-align: center;
-  border-radius: var(--r-lg);
-  border: 1px solid var(--line);
-}
-.hero-img-placeholder { background: #dcd6cb; aspect-ratio: 4/3; }
-.portrait-placeholder { background: #7c9473; color: #fff; aspect-ratio: 3/4; }
-.office-placeholder { background: #d6e0dd; }
-.map-placeholder { background: #cfb997; color: #fff; }
-
 /* --- HEADER --- */
 .topbar {
   display: flex;
@@ -109,7 +90,6 @@ img {
 }
 
 .brand { display: flex; gap: 0; align-items: center; }
-/* Removed brand__avatar css */
 
 .brand__name { font-family: var(--serif); font-weight: 700; font-size: 20px; line-height: 1.2; color: var(--ink); }
 .brand__meta { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
@@ -178,7 +158,9 @@ img {
 .dot--mint { background: var(--mint); }
 
 .hero__media { display: grid; gap: 20px; }
+/* Ensured portrait images work here */
 .media__frame { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow); }
+.hero__img { width: 100%; height: auto; display: block; }
 
 .info-card { background: #fff; padding: 16px; border-radius: var(--r-md); border: 1px solid var(--line); }
 .info-card__grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
@@ -243,13 +225,17 @@ img {
 
 details[open] .acc__icon::after { transform: rotate(90deg); opacity: 0; }
 
-/* --- ABOUT GRID --- */
+/* --- ABOUT GRID & IMAGES --- */
 .about__grid { display: grid; gap: 40px; }
 @media (min-width: 900px) { 
   .about__grid { grid-template-columns: 1fr 1fr; align-items: start; }
   .faq__grid { grid-template-columns: 1.5fr 1fr; align-items: start; } 
   .contact-card__grid { grid-template-columns: 1fr 1.5fr; }
 }
+
+.portrait { margin: 0; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow); }
+.portrait__img { width: 100%; height: auto; display: block; }
+.media__img { border-radius: var(--r-lg); }
 
 .timeline__list { list-style: none; padding: 0; display: grid; gap: 20px; max-width: 800px; margin: 0 auto; }
 .tl__card { background: #fff; padding: 24px; border-radius: var(--r-md); border: 1px solid var(--line); position: relative; margin-left: 20px; }
@@ -260,6 +246,8 @@ details[open] .acc__icon::after { transform: rotate(90deg); opacity: 0; }
 .contact-card { background: #fff; border-radius: var(--r-lg); border: 1px solid var(--line); overflow: hidden; box-shadow: var(--shadow); }
 .contact-card__info { padding: 30px; background: #f9f9f9; height: 100%; }
 .contact-card__form { padding: 30px; display: grid; gap: 16px; }
+/* Ensure contact image fills its area */
+.contact-card__img { width: 100%; height: 100%; object-fit: cover; min-height: 250px; }
 
 .ci-row { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 12px 0; font-size: 14px; }
 .ci-k { font-weight: 600; color: var(--muted); }
@@ -278,7 +266,7 @@ details[open] .acc__icon::after { transform: rotate(90deg); opacity: 0; }
 .map__frame { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow); width: 100%; }
 .map__wrap { max-width: var(--wrap); margin: 0 auto; }
 
-/* --- FOOTER (TIDIED UP) --- */
+/* --- FOOTER --- */
 .site-footer {
   background: #fff; border-top: 1px solid var(--line); padding: 60px 20px;
 }
