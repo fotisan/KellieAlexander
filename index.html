@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -19,10 +19,7 @@
     <div class="hero__wrap">
       <div class="topbar">
         <div class="brand">
-          <div class="brand__avatar" aria-hidden="true" style="background: #e0e0e0; overflow:hidden;">
-            <img src="https://via.placeholder.com/40" alt="" style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <div class="brand__text">
+          <div class="brand__avatar">KA</div> <div class="brand__text">
             <div class="brand__name">Kellie Alexander</div>
             <div class="brand__meta">LCSW, MSW • Westwood, NJ</div>
           </div>
@@ -73,7 +70,9 @@
 
         <div class="hero__media">
           <div class="media__frame">
-            <img class="media__img" src="https://via.placeholder.com/800x800/e6e1d8/7c9473?text=Kellie+Alexander" alt="Kellie Alexander Office" width="1200" height="800" loading="eager" />
+            <div class="placeholder-box hero-img-placeholder">
+                <span>Therapy Space Image</span>
+            </div>
           </div>
 
           <div class="info-card">
@@ -163,12 +162,8 @@
         </div>
 
         <div class="svc-nav" aria-label="Services navigation">
-          <button class="svc-nav__btn svc-nav__prev" type="button" aria-label="Previous">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-          </button>
-          <button class="svc-nav__btn svc-nav__next" type="button" aria-label="Next">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </button>
+          <button class="svc-nav__btn svc-nav__prev" type="button" aria-label="Previous">←</button>
+          <button class="svc-nav__btn svc-nav__next" type="button" aria-label="Next">→</button>
         </div>
 
       </div>
@@ -265,8 +260,10 @@
           </div>
 
           <div class="about__media">
-            <figure class="portrait">
-              <img class="portrait__img" src="https://via.placeholder.com/600x700/e6e1d8/7c9473?text=Kellie+Alexander+LCSW" alt="Kellie Alexander Portrait" width="900" height="1100" loading="lazy" />
+             <figure class="portrait">
+              <div class="placeholder-box portrait-placeholder">
+                  <span>Kellie Alexander<br>LCSW</span>
+              </div>
             </figure>
           </div>
         </div>
@@ -277,9 +274,6 @@
       <div class="timeline__wrap">
         <header class="timeline__head">
           <h2 class="timeline__title">Credentials & Experience</h2>
-          <p class="timeline__sub">
-            Professional background and education ensuring high-quality care.
-          </p>
         </header>
 
         <ol class="timeline__list">
@@ -355,18 +349,11 @@
                 Please contact me directly to discuss your financial situation. While I have standard rates, I am open to discussing options on a case-by-case basis.
               </div>
             </details>
-
-            <details class="faq-item">
-              <summary class="faq-item__q">What is your cancellation policy?</summary>
-              <div class="faq-item__a">
-                Please notify me at least 24 hours in advance if you need to cancel or reschedule to avoid being charged for the session.
-              </div>
-            </details>
           </div>
           
           <aside class="faq__media">
-             <div style="background: #d6e0dd; width:100%; height:100%; min-height:300px; border-radius:26px; display:flex; align-items:center; justify-content:center; color:#5f6c70;">
-                <span style="font-weight:600;">Office / Space</span>
+             <div class="placeholder-box office-placeholder">
+                <span>Office Space</span>
              </div>
           </aside>
         </div>
@@ -385,7 +372,9 @@
             
             <div class="contact-card__left">
               <div class="contact-card__media">
-                 <div style="background: #cfb997; width:100%; height:100%; min-height:250px;"></div>
+                 <div class="placeholder-box map-placeholder">
+                    <span>Westwood, NJ</span>
+                 </div>
               </div>
               
               <div class="contact-card__info">
@@ -422,7 +411,7 @@
 
               <div class="field">
                 <label class="field__label" for="message">Message</label>
-                <textarea class="field__input field__textarea" id="message" name="message" placeholder="Briefly describe what you are looking for..." required></textarea>
+                <textarea class="field__input field__textarea" id="message" name="message" placeholder="How can I help you?" required></textarea>
               </div>
 
               <div class="contact-form__actions">
@@ -439,7 +428,7 @@
       <div class="map__frame">
         <iframe 
           title="Map Location: Westwood, NJ"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24109.83985399587!2d-74.0483836!3d40.991206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fa7c7b809a8f%3A0x6b80584285b5420!2sWestwood%2C%20NJ%2007675!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.166818945034!2d-118.41239322356361!3d34.06523767315208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbf67b2285c3%3A0x967f86e8a56e6ebf!2zMTUyIFMgTGFza3kgRHIgIzEwMSwgQmV2ZXJseSBIaWxscywgQ0EgOTAyMTIsIM6Xzr3Pic68zq3Ovc61z4IgzqDOv867zrnPhM61zq_Otc-C!5e0!3m2!1sel!2sgr!4v1770189807817!5m2!1sel!2sgr" 
           width="100%" 
           height="450" 
           allowfullscreen="" 
@@ -485,18 +474,13 @@
       </div>
 
       <div class="site-footer__bottom">
-        <div class="site-footer__copy">© <span id="y"></span> Kellie Alexander. All rights reserved.</div>
-        <div class="site-footer__credit">Based on Psychology Today Profile</div>
+        <div class="site-footer__copy">© <span id="y"></span> Kellie Alexander.</div>
+        <div class="site-footer__credit">Psychology Today Profile</div>
       </div>
     </div>
   </footer>
 
-  <button class="to-top" type="button" aria-label="Scroll to top">
-    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-      <path d="M12 5l-6 6m6-6l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M12 5v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-  </button>
+  <button class="to-top" type="button" aria-label="Scroll to top">↑</button>
 
   <script>
     (function () {
@@ -528,7 +512,7 @@
           });
         };
         window.addEventListener("scroll", reveal);
-        reveal(); // Init
+        reveal(); 
 
         // Mobile Menu Logic
         const toggle = document.querySelector(".nav-toggle");
@@ -549,31 +533,18 @@
           });
         }
 
-        // Services Horizontal Scroll (Desktop/Mobile Arrows)
-        const svc = Array.from(document.querySelectorAll(".svc"));
+        // Services Horizontal Scroll
         const scroller = document.querySelector(".services__pyramid");
         const btnPrev = document.querySelector(".svc-nav__prev");
         const btnNext = document.querySelector(".svc-nav__next");
 
-        if (svc.length && scroller && btnPrev && btnNext) {
-          // Scroll buttons
+        if (scroller && btnPrev && btnNext) {
           btnPrev.addEventListener("click", () => {
             scroller.scrollBy({ left: -300, behavior: "smooth" });
           });
           btnNext.addEventListener("click", () => {
             scroller.scrollBy({ left: 300, behavior: "smooth" });
           });
-
-          // Check scroll position to hide arrows
-          const checkArrows = () => {
-            const max = scroller.scrollWidth - scroller.clientWidth - 5;
-            btnPrev.classList.toggle("is-hidden", scroller.scrollLeft <= 5);
-            btnNext.classList.toggle("is-hidden", scroller.scrollLeft >= max);
-          };
-          
-          scroller.addEventListener("scroll", checkArrows);
-          checkArrows();
-          window.addEventListener("resize", checkArrows);
         }
 
         // Scroll to Top
@@ -587,13 +558,6 @@
                 window.scrollTo({ top: 0, behavior: "smooth" });
             });
         }
-
-        // Accordion Logic
-        document.querySelectorAll("details.acc, details.faq-item").forEach((targetDetail) => {
-            targetDetail.addEventListener("click", () => {
-                // Close others if you want exclusive behavior (optional, disabled here for simplicity)
-            });
-        });
       });
     })();
   </script>
