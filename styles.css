@@ -3,7 +3,6 @@
   --bg: #fdfcfb;
   --bg-2: #f4f1ee;
   
-  /* Σκούρυνα το μελάνι για καλύτερη ανάγνωση */
   --ink: #1a2225;
   --muted: #4a5457;
   --line: rgba(44, 54, 57, 0.15);
@@ -76,13 +75,12 @@ img {
   padding: 60px 20px;
 }
 
-.hero__wrap, .services__wrap, .focus__wrap, .about__wrap, .timeline__wrap, .faq__wrap, .contact__wrap {
+.hero__wrap, .services__wrap, .focus__wrap, .about__wrap, .timeline__wrap, .faq__wrap, .contact__wrap, .map__wrap {
   max-width: var(--wrap);
   margin: 0 auto;
 }
 
-/* --- PLACEHOLDER BOX STYLES (NEW) --- */
-/* Αυτό φτιάχνει το πρόβλημα με τις εικόνες που δεν φορτώνουν */
+/* --- PLACEHOLDER BOX STYLES --- */
 .placeholder-box {
   width: 100%;
   height: 100%;
@@ -121,7 +119,7 @@ img {
 .brand__name { font-family: var(--serif); font-weight: 700; font-size: 18px; line-height: 1.2; }
 .brand__meta { font-size: 12px; color: var(--muted); text-transform: uppercase; }
 
-.nav { display: none; gap: 8px; } /* Hidden on mobile by default */
+.nav { display: none; gap: 8px; }
 @media (min-width: 900px) { .nav { display: flex; } }
 
 .pill {
@@ -206,7 +204,14 @@ img {
 .services__pyramid {
   display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px;
 }
-@media (min-width: 900px) { .services__pyramid { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; } }
+/* GRID UPDATE: 3 per row on desktop */
+@media (min-width: 900px) { 
+  .services__pyramid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 per row */
+    overflow: visible; 
+  } 
+}
 
 .svc {
   min-width: 280px; background: #fff; padding: 30px;
@@ -222,7 +227,7 @@ img {
 @media (min-width: 900px) { .svc-nav { display: none; } }
 .svc-nav__btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: #fff; cursor: pointer; }
 
-/* --- ACCORDIONS --- */
+/* --- ACCORDIONS (PLUS SIGN UPDATE) --- */
 .focus__grid, .faq__grid { display: grid; gap: 16px; max-width: 800px; margin: 0 auto; }
 .acc, .faq-item { background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
 .acc__summary, .faq-item__q {
@@ -233,9 +238,36 @@ img {
   padding: 0 20px 20px; color: var(--muted); font-size: 15px; border-top: 1px solid var(--line); background: #fafafa;
 }
 
+/* NEW: Plus Sign Styling */
+.acc__icon {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  display: block;
+}
+.acc__icon::before, .acc__icon::after {
+  content: "";
+  position: absolute;
+  background-color: var(--ink);
+  transition: transform 0.3s ease;
+}
+/* Horizontal line */
+.acc__icon::before {
+  top: 50%; left: 0; width: 100%; height: 2px; margin-top: -1px;
+}
+/* Vertical line */
+.acc__icon::after {
+  top: 0; left: 50%; width: 2px; height: 100%; margin-left: -1px;
+}
+
+/* Open State: Rotate into X or remove vertical line for Minus */
+details[open] .acc__icon::after {
+  transform: rotate(90deg); /* Merges with horizontal line to make minus */
+  opacity: 0; /* Or just hide it */
+}
+
 /* --- ABOUT GRID FIX --- */
 .about__grid { display: grid; gap: 40px; }
-/* Εδώ διορθώνεται το σπάσιμο του layout */
 @media (min-width: 900px) { 
   .about__grid { grid-template-columns: 1fr 1fr; align-items: start; }
   .faq__grid { grid-template-columns: 1.5fr 1fr; align-items: start; } 
@@ -247,7 +279,7 @@ img {
 .tl__dot { position: absolute; left: -26px; top: 30px; width: 12px; height: 12px; background: var(--warm); border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--line); }
 .tl__meta { font-size: 12px; text-transform: uppercase; color: var(--sage); margin-bottom: 8px; font-weight: 700; }
 
-/* --- CONTACT FORM VISIBILITY FIX --- */
+/* --- CONTACT --- */
 .contact-card { background: #fff; border-radius: var(--r-lg); border: 1px solid var(--line); overflow: hidden; box-shadow: var(--shadow); }
 .contact-card__info { padding: 30px; background: #f9f9f9; height: 100%; }
 .contact-card__form { padding: 30px; display: grid; gap: 16px; }
@@ -255,25 +287,38 @@ img {
 .ci-row { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 12px 0; font-size: 14px; }
 .ci-k { font-weight: 600; color: var(--muted); }
 
-/* Διόρθωση των Input Borders */
 .field__label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; text-transform: uppercase; color: var(--muted); }
 .field__input {
   width: 100%; padding: 12px;
-  border: 1px solid #c0c0c0; /* Darker border */
+  border: 1px solid #c0c0c0;
   border-radius: 8px;
-  background: #ffffff; /* White background */
+  background: #ffffff;
   font-family: inherit;
 }
 .field__input:focus { border-color: var(--ink); outline: none; }
 .field__textarea { min-height: 120px; resize: vertical; }
 
-/* --- FOOTER FIX --- */
+/* --- MAP FIX (Width Constraint) --- */
+.map__frame { 
+  border-radius: var(--r-lg); 
+  overflow: hidden; 
+  box-shadow: var(--shadow);
+  /* Ensures map fills the wrapper */
+  width: 100%; 
+}
+.map__wrap {
+  /* This ensures the map section follows the same width constraints as Contact */
+  max-width: var(--wrap);
+  margin: 0 auto;
+}
+
+/* --- FOOTER --- */
 .site-footer { background: #fff; border-top: 1px solid var(--line); padding: 60px 20px; }
 .site-footer__wrap { display: grid; gap: 40px; }
 .site-footer__cols { 
   display: grid; 
   gap: 30px; 
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Better sizing */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .site-footer__name { font-family: var(--serif); font-size: 24px; font-weight: 700; margin-bottom: 10px; }
 .site-footer__k { font-weight: 700; margin-bottom: 12px; text-transform: uppercase; font-size: 12px; color: var(--muted); }
